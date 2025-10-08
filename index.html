@@ -1,8 +1,845 @@
-<p>Hello 大家好</p>
-<p>我是霸都丶傲天，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewStudio AI工作室 - 智启雪域西藏，洞见未来新篇</title>
+    <!-- Open Graph 标签 -->
+    <meta property="og:title" content="MewStudio AI工作室 - 智启雪域西藏，洞见未来新篇">
+    <meta property="og:description" content="MewStudio AI工作室专注为西藏企业提供定制化人工智能解决方案，融合本地文化与前沿技术，推动数字化转型与品牌升级。">
+    <meta property="og:image" content="https://img.pyz.me/file/1758873967081_LogoC.png">
+    <meta property="og:url" content="https://pyz.me/Studio.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="MewStudio AI工作室">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#3B82F6',
+                        accent: '#9333EA',
+                       藏蓝: '#0F172A',
+                       藏红: '#BE123C',
+                       藏金: '#CA8A04',
+                        藏青: '#0891B2',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'tibet-pattern': "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239333ea' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .transition-smooth {
+                transition: all 0.3s ease-in-out;
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+            }
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            .gradient-text {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white bg-tibet-pattern">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-smooth">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                    <i class="fa fa-lightbulb-o text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-藏蓝">MewStudio</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-accent transition-smooth">关于我们</a>
+                <a href="#services" class="text-gray-700 hover:text-accent transition-smooth">服务矩阵</a>
+                <a href="#advantages" class="text-gray-700 hover:text-accent transition-smooth">我们优势</a>
+                <a href="#team" class="text-gray-700 hover:text-accent transition-smooth">团队介绍</a>
+                <a href="#cases" class="text-gray-700 hover:text-accent transition-smooth">创研实录</a>
+                <a href="#philosophy" class="text-gray-700 hover:text-accent transition-smooth">智赋理念</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-accent transition-smooth">客户赞誉</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-藏蓝 text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="text-gray-700 hover:text-accent py-2 transition-smooth">关于我们</a>
+                <a href="#services" class="text-gray-700 hover:text-accent py-2 transition-smooth">服务矩阵</a>
+                <a href="#advantages" class="text-gray-700 hover:text-accent py-2 transition-smooth">我们优势</a>
+                <a href="#team" class="text-gray-700 hover:text-accent py-2 transition-smooth">团队介绍</a>
+                <a href="#cases" class="text-gray-700 hover:text-accent py-2 transition-smooth">创研实录</a>
+                <a href="#philosophy" class="text-gray-700 hover:text-accent py-2 transition-smooth">智赋理念</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-accent py-2 transition-smooth">客户赞誉</a>
+            </div>
+        </div>
+    </nav>
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+    <!-- 英雄区域 -->
+    <header class="pt-28 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-藏蓝/80 via-primary/80 to-accent/80 text-white relative overflow-hidden">
+        <img src="https://pyz.me/yx.png" alt="藏族人士" class="absolute inset-0 w-full h-full object-cover object-top -z-10">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold mb-6 text-shadow leading-tight">
+                智启雪域西藏，洞见未来新篇
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] max-w-3xl mx-auto mb-10 leading-relaxed">
+                MewStudio AI工作室专注为西藏企业提供定制化人工智能解决方案，融合本地文化与前沿技术，推动数字化转型与品牌升级。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="bg-white text-藏蓝 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-smooth hover-scale shadow-lg">
+                    了解服务
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-full transition-smooth hover-scale">
+                    联系我们
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">智赋藏地</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-blue-50 rounded-2xl p-8 hover-scale card-shadow">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-search text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-4">深度洞察</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        结合西藏市场特点，深入分析行业难点，运用AI大数据发现机遇，助力企业明确发展方向。
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 rounded-2xl p-8 hover-scale card-shadow">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-rocket text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-4">智慧赋能</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        将前沿AI算法与藏地文化深度融合，打造定制化智能应用，让科技服务于本地的独特需求。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务矩阵 -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">服务矩阵</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 服务卡片 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
+                        <i class="fa fa-cog text-white text-6xl fa-spin"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">MewStudio定制AI方案</h3>
+                        <p class="text-gray-600">
+                            定制化开发人工智能应用，全面满足企业个性化需求，助力数字化转型。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 服务卡片 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-accent to-purple-700 flex items-center justify-center">
+                        <i class="fa fa-lightbulb-o text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">AI策略咨询</h3>
+                        <p class="text-gray-600">
+                            深度融合AI与商业洞察，提供战略规划、市场分析、运营优化等全方位咨询，助力决策者前瞻布局。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 服务卡片 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-藏青 to-teal-600 flex items-center justify-center">
+                        <i class="fa fa-line-chart text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">智能品牌升级</h3>
+                        <p class="text-gray-600">
+                            融合AI大数据与藏地文化，赋能企业品牌智能传播与价值提升，实现品牌影响力的全面升级。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们优势 -->
+    <section id="advantages" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">MewStudio：点亮藏地智慧</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    我们深知西藏市场充满独特挑战与机遇。MewStudio AI工作室凭借专业实力及对本地文化的深刻理解，助力您实现数字化转型。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mt-12">
+                <div class="bg-gradient-to-br from-藏蓝/5 to-primary/5 rounded-2xl p-8 hover-scale card-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-marker text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-4">本地化深度融合</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        我们不止提供技术，更将AI与藏地文化、市场需求深度融合，确保方案既先进又贴合本土实际，实现可持续发展。
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-accent/5 to-purple-500/5 rounded-2xl p-8 hover-scale card-shadow">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-cogs text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-4">前沿AI技术驱动</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        MewStudio汇聚顶尖AI专家，持续追踪并应用最新技术，确保您的业务始终走在行业前沿，抢占数字高地。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">星火团队</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 团队成员 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-64 bg-gray-200 flex items-center justify-center">
+                        <img src="https://pyz.me/img/zz.png" alt="张智" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-藏蓝 mb-1">张智</h3>
+                        <p class="text-accent mb-3">创始人兼AI架构师</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 团队成员 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-64 bg-gray-200 flex items-center justify-center">
+                        <img src="https://pyz.me/img/yj.png" alt="央金拉姆" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-藏蓝 mb-1">央金拉姆</h3>
+                        <p class="text-accent mb-3">数据总监</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 团队成员 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-64 bg-gray-200 flex items-center justify-center">
+                        <img src="https://pyz.me/img/sl.png" alt="索朗次仁" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-藏蓝 mb-1">索朗次仁</h3>
+                        <p class="text-accent mb-3">本地化解决方案专家</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 团队成员 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-64 bg-gray-200 flex items-center justify-center">
+                        <img src="https://pyz.me/img/gs.png" alt="格桑梅朵" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-藏蓝 mb-1">格桑梅朵</h3>
+                        <p class="text-accent mb-3">开发工程师</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary transition-smooth"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 创研实录 -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">创研实录</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 案例 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-blue-700 flex items-center justify-center">
+                        <i class="fa fa-building-o text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">AI平台</h3>
+                        <h4 class="text-lg font-medium text-gray-700 mb-3">助力拉萨智慧城市</h4>
+                        <p class="text-gray-600">
+                            通过大数据优化公共服务，提升政务效率与市民满意度。为城市管理提供智能化解决方案。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 案例 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-accent to-purple-700 flex items-center justify-center">
+                        <i class="fa fa-shopping-bag text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">雪域珍品品牌</h3>
+                        <h4 class="text-lg font-medium text-gray-700 mb-3">AI助销</h4>
+                        <p class="text-gray-600">
+                            运用AI分析打造雪域珍品，融合文化符号，销量激增300%。成功将传统文化与现代营销技术相结合。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 案例 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-br from-藏青 to-teal-600 flex items-center justify-center">
+                        <i class="fa fa-heartbeat text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-藏蓝 mb-3">藏医智问</h3>
+                        <h4 class="text-lg font-medium text-gray-700 mb-3">定制藏医问诊应用</h4>
+                        <p class="text-gray-600">
+                            融合AI辅助诊断，提升藏医院服务效率与可及性的智能化整体解决方案，传承与创新藏医药文化。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 智赋理念 -->
+    <section id="philosophy" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">智赋理念</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    智启藏地，共创数字未来
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 理念卡片 1 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">智赋愿景</h3>
+                    <p class="text-gray-600">
+                        成为西藏领先AI灯塔，点亮万企共筑数字未来
+                    </p>
+                </div>
+                
+                <!-- 理念卡片 2 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">核心使命</h3>
+                    <p class="text-gray-600">
+                        融合AI与藏地文化，赋能本地企业数字化跃迁。
+                    </p>
+                </div>
+                
+                <!-- 理念卡片 3 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-藏青 to-teal-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">本地洞察</h3>
+                    <p class="text-gray-600">
+                        分析西藏市场趋势，提供精准AI方案
+                    </p>
+                </div>
+                
+                <!-- 理念卡片 4 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-藏红 to-red-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-bullhorn text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">策略目标</h3>
+                    <p class="text-gray-600">
+                        AI赋能藏企，助力降本增效创新成长。
+                    </p>
+                </div>
+                
+                <!-- 理念卡片 5 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-藏金 to-amber-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-handshake-o text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">高效协作</h3>
+                    <p class="text-gray-600">
+                        建立透明敏捷的沟通协作流程，确保客户无缝对接
+                    </p>
+                </div>
+                
+                <!-- 理念卡片 6 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow hover-scale">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-600 to-emerald-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-lightbulb-o text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-3">创新性</h3>
+                    <p class="text-gray-600">
+                        持续研发前沿AI技术，为西藏企业提供智能支持
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户赞誉 -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">客户赞誉</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-3xl mx-auto">
+                    MewStudio：智启转型，共鉴辉煌
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 客户评价 1 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 relative card-shadow">
+                    <div class="absolute -top-5 left-6 text-5xl text-accent opacity-20">
+                        <i class="fa fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 relative z-10">
+                        MewStudio的AI文旅方案革新了营销模式，客流量大增40%，品牌国际化取得关键进展！
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                            <i class="fa fa-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-藏蓝">罗布次仁</h4>
+                            <p class="text-gray-500 text-sm">西藏文旅企业CEO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 客户评价 2 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 relative card-shadow">
+                    <div class="absolute -top-5 left-6 text-5xl text-accent opacity-20">
+                        <i class="fa fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 relative z-10">
+                        AI客服与推荐系统提升体验，销售额翻倍，MewStudio团队专业高效！
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                            <i class="fa fa-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-藏蓝">卓玛</h4>
+                            <p class="text-gray-500 text-sm">拉萨电商总监</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="py-16 bg-gradient-to-br from-藏蓝 via-primary to-accent text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="hover-scale">
+                    <div class="text-4xl font-bold mb-2" id="counter1">50+</div>
+                    <p class="text-white/80">服务企业</p>
+                </div>
+                <div class="hover-scale">
+                    <div class="text-4xl font-bold mb-2" id="counter2">100+</div>
+                    <p class="text-white/80">AI解决方案</p>
+                </div>
+                <div class="hover-scale">
+                    <div class="text-4xl font-bold mb-2" id="counter3">100%</div>
+                    <p class="text-white/80">客户满意度</p>
+                </div>
+                <div class="hover-scale">
+                    <div class="text-4xl font-bold mb-2" id="counter4">24×7</div>
+                    <p class="text-white/80">持续服务支持</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-藏蓝 mb-4">联系我们</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    智联藏地，共耀辉煌。我们一起开启数字化转型之旅。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-2xl p-8 card-shadow">
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-6">发送消息</h3>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">电话</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">留言</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="bg-accent text-white font-semibold py-3 px-8 rounded-lg hover:bg-accent/90 transition-smooth hover-scale shadow-md">
+                            发送消息
+                        </button>
+                        <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                            <i class="fa fa-check-circle mr-2"></i>消息发送成功，我们会尽快与您联系！
+                        </div>
+                        <div id="errorMessage" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                            <i class="fa fa-exclamation-circle mr-2"></i><span id="errorDetail">消息发送失败，请稍后再试。</span>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 card-shadow">
+                    <h3 class="text-xl font-semibold text-藏蓝 mb-6">联系方式</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-map-marker text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-藏蓝 mb-1">地址</h4>
+                                <p class="text-gray-600">西藏自治区拉萨市城关区江苏路16号</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-phone text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-藏蓝 mb-1">电话</h4>
+                                <p class="text-gray-600">133-9808-6477</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-藏蓝 mb-1">邮箱</h4>
+                                <p class="text-gray-600">info@pyz.me</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-clock-o text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-藏蓝 mb-1">工作时间</h4>
+                                <p class="text-gray-600">周一至周五: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold text-藏蓝 mb-4">关注我们</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-smooth">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-smooth">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-smooth">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-smooth">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-藏蓝 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                            <i class="fa fa-lightbulb-o text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">MewStudio</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        智启雪域西藏，洞见未来新篇。MewStudio AI工作室专注为西藏企业提供定制化人工智能解决方案。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-smooth"><i class="fa fa-weixin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-smooth"><i class="fa fa-weibo text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-smooth"><i class="fa fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-smooth"><i class="fa fa-github text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-smooth">关于我们</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-smooth">服务矩阵</a></li>
+                        <li><a href="#advantages" class="text-gray-400 hover:text-white transition-smooth">我们优势</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition-smooth">团队介绍</a></li>
+                        <li><a href="#cases" class="text-gray-400 hover:text-white transition-smooth">创研实录</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">服务项目</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">定制AI方案</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">AI策略咨询</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">智能品牌升级</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">数据分析服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">应用开发</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker w-6 text-gray-400"></i>
+                            <span class="text-gray-400">西藏自治区拉萨市城关区江苏路16号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone w-6 text-gray-400"></i>
+                            <span class="text-gray-400">133-9808-6477</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope w-6 text-gray-400"></i>
+                            <span class="text-gray-400">info@pyz.me</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; <span id="currentYear"></span> MewStudio AI工作室. 保留所有权利. 本页面由AI生产. 联系我们制作同款
+                    </p>
+                    <script>
+                        document.getElementById('currentYear').textContent = new Date().getFullYear();
+                    </script>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-smooth">隐私政策</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-smooth">服务条款</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-smooth">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-accent/90 transition-smooth opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                    
+                    // 滚动到目标位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 导航栏滚动效果
+        const nav = document.querySelector('nav');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            
+            if (scrollTop > 100) {
+                nav.classList.add('py-2', 'shadow-lg');
+                nav.classList.remove('py-3', 'shadow-md');
+            } else {
+                nav.classList.add('py-3', 'shadow-md');
+                nav.classList.remove('py-2', 'shadow-lg');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        
+        // 联系表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // 验证电话号码格式
+            const phoneRegex = /^1[3-9]\d{9}$/; // 中国手机号正则表达式
+            if (!phoneRegex.test(phone)) {
+                // 显示错误消息
+                const errorMessage = document.getElementById('errorMessage');
+                const errorDetails = document.getElementById('errorDetail');
+                errorMessage.classList.remove('hidden');
+                document.getElementById('successMessage').classList.add('hidden');
+                errorDetails.textContent = '请输入有效的11位手机号码';
+                return; // 阻止表单提交
+            }
+            
+            const formData = {
+                name: name,
+                phone: phone,
+                message: message
+            };
+            
+            try {
+                // 修改fetch调用地址为本地代理
+                const response = await fetch('https://studio.h.pyz.me/send-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+            
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            
+                // 显示成功消息 - 移除hidden类
+                document.getElementById('successMessage').classList.remove('hidden');
+                document.getElementById('errorMessage').classList.add('hidden');
+                this.reset();
+            } catch (error) {
+                // 显示错误消息并记录详细错误
+                const errorMessage = document.getElementById('errorMessage');
+                const errorDetails = document.getElementById('errorDetail'); // 修复ID引用
+                errorMessage.classList.remove('hidden');
+                document.getElementById('successMessage').classList.add('hidden');
+            
+                // 显示详细错误信息以便调试
+                errorDetails.textContent = `消息发送失败，请稍后再试。错误详情: ${error.message}`;
+                console.error('Webhook发送失败:', error);
+            }
+        });
+    </script>
+</body>
+</html>
